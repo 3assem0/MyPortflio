@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>.</title>
+    <link rel="icon" href="assets/Untitled (19).png">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mediaqueries.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <nav id="desktop-nav">
+      <div class="logo"><SPAN style="color: red;">3</SPAN>A</div>
+      <div>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <nav id="hamburger-nav">
+      <div class="logo"><SPAN style="color: red;">3</SPAN>A</div>
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="menu-links">
+          <li><a href="#about" onclick="toggleMenu()">About</a></li>
+          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+        </div>
+      </div>
+    </nav>
+    <section id="profile" style="display: flex; flex-direction: column; ">
+      <div class="section-container" style="display: flex; ">
+        <div class="w-full md:w-1/3 flex justify-center mb-8 md:mb-0">
+          <img src="imgs/2.png" alt="Profile Picture" class="rounded-full border-4 border-red-500 w-64 h-64 object-cover" />
+        </div>
+      <div class="section__text">
+        <p class="section__text__p1">Hi there, I'm</p>
+        <h1 class="title">Assem Ayman</h1>
+        <p class="section__text__p2">FullStack Developer & Robotics Coach</p>
+        <div class="btn-container">
+          <button
+          class=" text-green-700 hover:text-white border border-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-green-500 dark:text-green-500 dark:hover:text-white dark:hover:bg-green-600 dark:focus:ring-green-800"
+          onclick="window.open('./assets/AA CV.pdf')">
+          <!-- asf -->
+          Download CV
+        </button>
+        <button class="text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900"
+          onclick="location.href='./#contact'">
+          Contact Info
+        </button>
+        </div>
+        <div id="socials-container">
+          <img
+            src="./assets/linkedin.png"
+            alt="My LinkedIn profile"
+            class="icon"
+            onclick="location.href='https://www.linkedin.com/in/assem-ayman-abdelwahab-831662262/'" />
+          <img
+            src="./assets/github.png"
+            alt="My Github profile"
+            class="icon"
+            onclick="location.href='https://github.com/3assem0/'" />
+        </div>
+      </div>
+    </div>
+      <div class="slider">
+        <div class="sliderlogos">
+          <span>Vercel</span>
+          <span>Figma</span>
+          <span>Tailwind</span>
+          <span>Git</span>
+          <span>Stack Overflow</span>
+          <span>jQuery</span>
+          <span>Kali Linux</span>
+          <span>MongoDB</span>
+          <span>Arduino</span>
+          <span>AWS</span>
+          <span>C</span>
+          <span>C#</span>
+          <span>C++</span>
+          <span>Dart</span>
+          <span>Flutter</span>
+          <span>GitHub</span>
+          <span>MySQL</span>
+          <span>Regex</span>
+          <span>Solidity</span>
+          <span>Notion</span>
+          <span>npm</span>
+          <span>PHP</span>
+          <span>JavaScript</span>
+          <span>TypeScript</span>
+          <span>PowerShell</span>
+          <span>Vite</span>
+          <span>Redux</span>
+          <span>Java</span>
+          <span>Next.js</span>
+          <span>React</span>
+          <span>Bootstrap</span>
+          <span>Postman</span>
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>VS Code</span>
+          <span>GitHub</span>
+          <span>NestJS</span>
+          <span>Node.js</span>
+          <span>Python</span>
+
+          <!-- Duplicating for seamless looping -->
+          <span>Vercel</span>
+          <span>Figma</span>
+          <span>Tailwind</span>
+          <span>Git</span>
+          <span>Stack Overflow</span>
+          <span>jQuery</span>
+          <span>Kali Linux</span>
+          <span>MongoDB</span>
+          <span>Arduino</span>
+          <span>AWS</span>
+          <span>C</span>
+          <span>C#</span>
+          <span>C++</span>
+          <span>Dart</span>
+          <span>Flutter</span>
+          <span>GitHub</span>
+          <span>MySQL</span>
+          <span>Regex</span>
+          <span>Solidity</span>
+          <span>Notion</span>
+          <span>npm</span>
+          <span>PHP</span>
+          <span>JavaScript</span>
+          <span>TypeScript</span>
+          <span>PowerShell</span>
+          <span>Vite</span>
+          <span>Redux</span>
+          <span>Java</span>
+          <span>Next.js</span>
+          <span>React</span>
+          <span>Bootstrap</span>
+          <span>Postman</span>
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>VS Code</span>
+          <span>GitHub</span>
+          <span>NestJS</span>
+          <span>Node.js</span>
+          <span>Python</span>
+        </div>
+      </div>
+    
+    </section>
+    <section id="about">
+      <p class="section__text__p1">Get To Know More</p>
+      <h1 class="title">About Me</h1>
+      <div class="section-container">
+       
+        <div class="min-h-screen bg-white flex items-center justify-center p-6">
+          <div class="container mx-auto">
+            <!-- Top Section: Experience & Education -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+              <!-- Experience Card -->
+              <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition transform hover:scale-105">
+                <div class="flex flex-col items-center">
+                  <img src="./assets/experience.png" alt="Experience Icon" class="w-16 h-16 mb-4" />
+                  <h3 class="text-3xl font-bold text-gray-900 mb-4">Experience</h3>
+                  <p class="text-lg text-gray-700 text-center mb-2">
+                    1+ years<br>
+                    Frontend &amp; Backend Developer
+                  </p>
+                  <p class="text-lg text-gray-700 text-center">
+                    2+ years<br>
+                    Robotics, Programming &amp; Web Mentor
+                  </p>
+                </div>
+              </div>
+              <!-- Education Card -->
+              <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition transform hover:scale-105">
+                <div class="flex flex-col items-center">
+                  <img src="./assets/education.png" alt="Education Icon" class="w-16 h-16 mb-4" />
+                  <h3 class="text-3xl font-bold text-gray-900 mb-4">Education</h3>
+                  <p class="text-lg text-gray-700 text-center mb-2">
+                    B.Sc. in Computer Science &amp; AI
+                  </p>
+                  <p class="text-lg text-gray-700 text-center">
+                    Expected Graduation: 2026
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Bottom Section: Portfolio Details -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <!-- Card 1: About Me -->
+              <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2">
+                <div class="flex items-center mb-6">
+                  <div class="bg-blue-500 p-3 rounded-full mr-4">
+                    <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M10 2C5.58 2 2 5.58 2 10s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8z"></path>
+                    </svg>
+                  </div>
+                  <h2 class="text-3xl font-bold text-gray-900">About Me</h2>
+                </div>
+                <p class="text-lg text-gray-700">
+                  I’m a <span class="font-semibold text-yellow-500">Computer Science &amp; AI student</span> and a <span class="font-semibold text-green-500">full-stack developer</span> passionate about scalable tech solutions.
+                </p>
+              </div>
+              
+              <!-- Card 2: Technical Expertise -->
+              <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2">
+                <div class="flex items-center mb-6">
+                  <div class="bg-orange-500 p-3 rounded-full mr-4">
+                    <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M4 3h12a1 1 0 011 1v12a1 1 0 01-1 1H4a1 1 0 01-1-1V4a1 1 0 011-1zm0 2v10h12V5H4z"></path>
+                    </svg>
+                  </div>
+                  <h2 class="text-3xl font-bold text-gray-900">Technical Expertise</h2>
+                </div>
+                <p class="text-lg text-gray-700">
+                  <span class="font-semibold text-indigo-500">Full-Stack Development:</span> Proficient in <span class="font-semibold text-blue-500">React</span>, <span class="font-semibold text-orange-500">Next.js</span>, <span class="font-semibold text-green-500">Node.js</span>, and more.
+                </p>
+              </div>
+              
+              <!-- Card 3: STEM Educator & Robotics Mentor -->
+              <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2">
+                <div class="flex items-center mb-6">
+                  <div class="bg-pink-500 p-3 rounded-full mr-4">
+                    <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9 12H7v3H4v-3H2l4-4 4 4zM9 4H7v3H4V4H2v3h4v-1h2v3h2V6h2v3h4V4h-2v3h-2V4H9z"></path>
+                    </svg>
+                  </div>
+                  <h2 class="text-3xl font-bold text-gray-900">STEM Educator &amp; Robotics Mentor</h2>
+                </div>
+                <p class="text-lg text-gray-700">
+                  Developed courses for <span class="font-semibold text-yellow-500">150+ students</span> using <span class="font-semibold text-teal-500">EV3</span> and <span class="font-semibold text-blue-500">SPIKE</span>.
+                </p>
+              </div>
+              
+              <!-- Card 4: Robotics Coaching -->
+              <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2">
+                <div class="flex items-center mb-6">
+                  <div class="bg-purple-500 p-3 rounded-full mr-4">
+                    <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M2 5a2 2 0 012-2h3v2H4v10h3v2H4a2 2 0 01-2-2V5zm14 0a2 2 0 00-2-2h-3v2h3v10h-3v2h3a2 2 0 002-2V5z"></path>
+                    </svg>
+                  </div>
+                  <h2 class="text-3xl font-bold text-gray-900">Robotics Coaching</h2>
+                </div>
+                <p class="text-lg text-gray-700">
+                  Guided teams in <span class="font-semibold text-pink-500">LEGO MINDSTORMS</span> and <span class="font-semibold text-green-500">IoT prototyping</span>, boosting creativity.
+                </p>
+              </div>
+              
+              <!-- Card 5: Why I Do It -->
+              <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2">
+                <div class="flex items-center mb-6">
+                  <div class="bg-yellow-500 p-3 rounded-full mr-4">
+                    <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M10 2a8 8 0 100 16 8 8 0 000-16zm1 12H9v-2H7V9h2V7h2v2h2v2h-2v2z"></path>
+                    </svg>
+                  </div>
+                  <h2 class="text-3xl font-bold text-gray-900">Why I Do It</h2>
+                </div>
+                <p class="text-lg text-gray-700">
+                  Passionate about <span class="font-semibold text-indigo-500">education</span> and <span class="font-semibold text-pink-500">innovation</span>, I explore <span class="font-semibold text-green-500">AI/ML</span> and <span class="font-semibold text-teal-500">IoT systems</span>.
+                </p>
+              </div>
+              
+              <!-- Card 6: Let’s Collaborate -->
+              <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2">
+                <div class="flex items-center mb-6">
+                  <div class="bg-green-500 p-3 rounded-full mr-4">
+                    <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M10 2C5.58 2 2 5.58 2 10s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm1 11H9v-2H7V9h2V7h2v2h2v2h-2v2z"></path>
+                    </svg>
+                  </div>
+                  <h2 class="text-3xl font-bold text-gray-900">Let’s Collaborate</h2>
+                </div>
+                <p class="text-lg text-gray-700">
+                  Open to building <span class="font-semibold text-yellow-500">full-stack apps</span>, optimizing workflows, or mentoring teams. Let's create something amazing!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        
+        
+      <!-- </div> -->
+      <img
+        src="./assets/arrow.png"
+        alt="Arrow icon"
+        class="icon arrow"
+        onclick="location.href='./#experience'" />
+    </section>
+    <section id="experience">
+      <p class="section__text__p1">Explore My</p>
+      <h1 class="title">Experience</h1>
+      <div class="experience-details-container excon2 ">
+        <div class="about-containers  excon">
+          <div class="details-container">
+            <h2 class="experience-sub-title">Frontend Development</h2>
+            <div class="article-container">
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon" />
+                <div>
+                  <h3>HTML</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon" />
+                <div>
+                  <h3>CSS</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon" />
+                <div>
+                  <h3>JavaScript</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon" />
+                <div>
+                  <h3>React Vite</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon" />
+                <div>
+                  <h3>TailwindCSS</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon" />
+                <div>
+                  <h3>Bootstrap</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon" />
+                <div>
+                  <h3>Git & GitHub</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon" />
+                <div>
+                  <h3>Node.JS</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+              <!--  -->
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon" />
+                <div>
+                  <h3>Nest.JS</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon" />
+                <div>
+                  <h3>MongoDB</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon" />
+                <div>
+                  <h3>SQL & NoSQL</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon" />
+                <div>
+                  <h3>Express</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon" />
+                <div>
+                  <h3>TypeScript</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon" />
+                <div>
+                  <h3>SEO</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon" />
+                <div>
+                  <h3>Next.js</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+            </div>
+          </div>
+          <!-- <div class="details-container">
+            <h2 class="experience-sub-title">Robotics</h2>
+            <div class="article-container">
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon" />
+                <div>
+                  <h3>EV3</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon" />
+                <div>
+                  <h3>SpikePrime</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon" />
+                <div>
+                  <h3>SpikeEssential</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon" />
+                <div>
+                  <h3>Wedo</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon" />
+                <div>
+                  <h3>Arduino</h3>
+                  <p>Intermediate</p>
+                </div>
+              </article>
+            </div>
+          </div> -->
+
+        </div>
+
+      </div>
+      <img
+        src="./assets/arrow.png"
+        alt="Arrow icon"
+        class="icon arrow"
+        onclick="location.href='./#projects'" />
+    </section>
+    <section id="projects">
+      <p class="section__text__p1">Browse My Recent</p>
+      <h1 class="title">Projects</h1>
+      <div class="experience-details-container">
+        
+        <div class="about-containers">
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="imgs/pro1.png"
+                alt="Project 1"
+                class="project-img" />
+            </div>
+            <h2 class="experience-sub-title project-title">Online Games
+              site</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/3assem0/Online-Games-webpage/'">
+                Github
+              </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://3assem0.github.io/Online-Games-webpage/'">
+                Live Demo
+              </button>
+            </div>
+          </div>
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="imgs/pro2.png"
+                alt="Project 2"
+                class="project-img" />
+            </div>
+            <h2 class="experience-sub-title project-title">Sites Book
+              Marker</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/3assem0/BookMarker_N/'">
+                Github
+              </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://3assem0.github.io/BookMarker/'">
+                Live Demo
+              </button>
+            </div>
+          </div>
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="imgs/pro9.png"
+                alt="Project 2"
+                class="project-img" />
+            </div>
+            <h2 class="experience-sub-title project-title">Real Estate Site</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/3assem0/Sweet-home'">
+                Github
+              </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://sweet-home-sigma.vercel.app/'">
+                Live Demo
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="about-containers">
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="imgs/pro6.png"
+                alt="Project 1"
+                class="project-img" />
+            </div>
+            <h2 class="experience-sub-title project-title">E-commerce 
+              Website</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/3assem0/e-commerce/'">
+                Github
+              </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://3assem0.github.io/e-commerce/'">
+                Live Demo
+              </button>
+            </div>
+          </div>
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="imgs/Spiro.png"
+                alt="Project 2"
+                class="project-img" />
+            </div>
+            <h2 class="experience-sub-title project-title">Spiro Spates</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/3assem0/spiro-spates'">
+                Github
+              </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://3assem0.github.io/spiro-spates/'">
+                Live Demo
+              </button>
+            </div>
+          </div>
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="imgs/pro7.png"
+                alt="Project 3"
+                class="project-img" />
+            </div>
+            <h2 class="experience-sub-title project-title">Know every where weather now</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/3assem0/Weather-smart-app/'">
+                Github
+              </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://3assem0.github.io/Weather-smart-app/'">
+                Live Demo
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="about-containers">
+          <!-- <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="imgs/pro8.png"
+                alt="Project 1"
+                class="project-img" />
+            </div>
+            <h2 class="experience-sub-title project-title">Grid System view </h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/3assem0/GridMasterClass/'">
+                Github
+              </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://3assem0.github.io/GridMasterClass/'">
+                Live Demo
+              </button>
+            </div>
+          </div> -->
+          <!-- <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="imgs/pro9.png"
+                alt="Project 2"
+                class="project-img" />
+            </div>
+            <h2 class="experience-sub-title project-title">Smart Login/SignUp site</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/3assem0/smart-login-system'">
+                Github
+              </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://3assem0.github.io/smart-login-system/'">
+                Live Demo
+              </button>
+            </div>
+          </div> -->
+          <!-- <div class="details-container  color-container">
+            <div class="article-container">
+              <img
+                src="imgs/pro10.png"
+                alt="Project 3"
+                class="project-img" />
+            </div>
+            <h2 class="experience-sub-title project-title">Simple login UI</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/3assem0/Responsive-login-UX/'">
+                Github
+              </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://3assem0.github.io/Responsive-login-UX//'">
+                Live Demo
+              </button>
+            </div>
+          </div> -->
+        </div>
+       
+      </div>
+      <img
+        src="./assets/arrow.png"
+        alt="Arrow icon"
+        class="icon arrow"
+        onclick="location.href='./#contact'" />
+    </section>
+    <section id="contact">
+      <p class="section__text__p1">Get in Touch</p>
+      <h1 class="title">Contact Me</h1>
+      <div class="contact-info-upper-container">
+        <div class="contact-info-container">
+          <img
+            src="./assets/email.png"
+            alt="Email icon"
+            class="icon contact-icon email-icon" />
+          <p><a
+              href="mailto:assemayman5900@gmail.com">assemayman5900@gmail.com</a></p>
+        </div>
+        <div class="contact-info-container">
+          <img
+            src="./assets/linkedin.png"
+            alt="LinkedIn icon"
+            class="icon contact-icon" />
+          <p><a href="https://www.linkedin.com/in/assem-ayman-abdelfatah-831662262/">LinkedIn</a></p>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <nav>
+        <div class="nav-links-container">
+          <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+      <p>Copyright &copy; 2024 Assem Ayman. All Rights Reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+
+  </body>
+</html>
