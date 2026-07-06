@@ -19,24 +19,33 @@
     <!-- Custom Styles -->
     <link rel="stylesheet" href="style.css" />
     <style>
-        /* Specific tweaks for that border-grid look */
+        /* Floating card grid — matches the Organizations/Contact card style site-wide */
         .bento-grid {
-            display: grid;
-            gap: 1px; /* The border width */
-            background-color: #d1d5db; /* gray-300 for clearer lines */
-            border: 1px solid #d1d5db;
-            overflow: hidden;
-            border-radius: 1rem;
-        }
-        .dark .bento-grid {
-            background-color: #374151; /* gray-700 for dark mode */
-            border-color: #374151;
+            display: grid !important;
+            gap: 1rem !important;
+            background-color: transparent !important;
+            border: none !important;
+            overflow: visible !important;
+            border-radius: 0 !important;
         }
         .bento-card {
-            background-color: #ffffff;
+            background-color: #ffffff !important;
+            border-radius: 1rem !important;
+            border: 1px solid #f0f0f2 !important;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05) !important;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+        .bento-card:hover {
+            box-shadow: 0 16px 32px -12px rgba(0,0,0,0.15) !important;
+            transform: translateY(-3px);
         }
         .dark .bento-card {
-            background-color: #0d1117; /* Card bg */
+            background-color: #0d1117 !important;
+            border-color: #1f2937 !important;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.3) !important;
+        }
+        .dark .bento-card:hover {
+            box-shadow: 0 20px 40px -12px rgba(0,0,0,0.5) !important;
         }
     </style>
   </head>
@@ -150,11 +159,13 @@
     </section>
 
     <!-- About Bento Grid -->
-    <!-- About Bento Grid يي-->
     <section id="about" class="py-24 px-6 bg-surface-light dark:bg-surface-dark">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-2xl font-bold mb-8 dark:text-white">About Me</h2>
-            
+            <div class="mb-8">
+                <span class="text-xs font-bold tracking-wider text-blue-600 dark:text-blue-400 uppercase mb-2 block">Introduction</span>
+                <h2 class="text-3xl font-bold dark:text-white">About Me</h2>
+            </div>
+
             <div class="bento-grid grid-cols-1 md:grid-cols-3 auto-rows-[auto]">
                 
                 <!-- Main Bio Card (Wide) -->
@@ -184,13 +195,21 @@
                      </div>
                      <h3 class="text-2xl font-bold mb-6 dark:text-white">Experience</h3>
                      <div class="overflow-y-auto max-h-[500px] pr-2 pl-2 scrollbar-hide py-2">
-                         <!-- Item 0 (New Data Engineer) -->
-                         <!-- <div class="relative pl-6 pb-12 border-l-2 border-gray-200 dark:border-gray-800">
+                         <!-- Item -1 (Software Engineer) -->
+                         <div class="relative pl-6 pb-12 border-l-2 border-gray-200 dark:border-gray-800">
+                             <div class="absolute -left-[5px] -top-0 w-3 h-3 rounded-full bg-green-500 "></div>
+                             <h4 class="font-bold text-gray-900 dark:text-white text-base">Software Engineer</h4>
+                             <p class="text-xs text-green-600 dark:text-green-400 font-bold uppercase tracking-wide mt-1">RaySoftware Development • Feb 2026 - Present</p>
+                             <p class="text-sm text-gray-500 dark:text-gray-400 mt-2 leading-relaxed">Developed MyDresser, an AI-powered fashion app for avatar generation and virtual try-on. Built the backend with Django (Python) integrated with a Dart-based mobile frontend.</p>
+                         </div>
+
+                         <!-- Item 0 (Data Engineer) -->
+                         <div class="relative pl-6 pb-12 border-l-2 border-gray-200 dark:border-gray-800">
                              <div class="absolute -left-[5px] -top-0 w-3 h-3 rounded-full bg-emerald-500 "></div>
                              <h4 class="font-bold text-gray-900 dark:text-white text-base">Data Engineer</h4>
-                             <p class="text-xs text-emerald-600 dark:text-emerald-400 font-bold uppercase tracking-wide mt-1">Kuwait • 2025 – Present</p>
-                             <p class="text-sm text-gray-500 dark:text-gray-400 mt-2 leading-relaxed">Designed and implemented data cleaning, structuring, and identification workflows using APIs, delivering reliable data to the application layer.</p>
-                         </div> -->
+                             <p class="text-xs text-emerald-600 dark:text-emerald-400 font-bold uppercase tracking-wide mt-1">Souq Algomlah, Kuwait • 2025 – 2026</p>
+                             <p class="text-sm text-gray-500 dark:text-gray-400 mt-2 leading-relaxed">Designed and implemented data cleaning, structuring, and identification pipelines using external APIs, delivering reliable, structured data to the application layer.</p>
+                         </div>
 
                          <!-- Item 1 -->
                          <div class="relative pl-6 pb-12 border-l-2 border-gray-200 dark:border-gray-800">
@@ -233,8 +252,8 @@
                         <div class="space-y-4">
                             <div>
                                 <h4 class="text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider">Pharos University</h4>
-                                <p class="text-sm font-semibold dark:text-gray-200">CS & AI</p>
-                                <p class="text-xs text-gray-500">Expected Graduation: 2026</p>
+                                <p class="text-sm font-semibold dark:text-gray-200">B.Sc. Computer Science & AI</p>
+                                <p class="text-xs text-gray-500">2022 - 2026 (Expected) • GPA 3.0</p>
                             </div>
                             <div>
                                 <h4 class="text-xs font-bold text-purple-600 dark:text-purple-400 uppercase tracking-wider">Certifications</h4>
@@ -254,22 +273,37 @@
                     
                     <div class="space-y-4">
                         <div>
-                            <p class="text-[10px] uppercase tracking-wider text-gray-400 mb-2 font-bold">Web Development</p>
+                            <p class="text-[10px] uppercase tracking-wider text-gray-400 mb-2 font-bold">Frontend</p>
                             <div class="flex flex-wrap gap-1.5">
                                 <span class="stack-badge">React</span>
                                 <span class="stack-badge">Next.js</span>
-                                <span class="stack-badge">Node.js</span>
+                                <span class="stack-badge">Vite</span>
                                 <span class="stack-badge">TypeScript</span>
                                 <span class="stack-badge">Tailwind</span>
-                                <span class="stack-badge">MongoDB</span>
+                                <span class="stack-badge">Framer Motion</span>
                             </div>
                         </div>
-                        
+
                         <div>
-                            <p class="text-[10px] uppercase tracking-wider text-gray-400 mb-2 font-bold">Robotics & Languages</p>
+                            <p class="text-[10px] uppercase tracking-wider text-gray-400 mb-2 font-bold">Backend & Data</p>
                             <div class="flex flex-wrap gap-1.5">
-                                <span class="stack-badge bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400">C++</span>
+                                <span class="stack-badge">Node.js</span>
+                                <span class="stack-badge">Nest.js</span>
+                                <span class="stack-badge">Express.js</span>
+                                <span class="stack-badge">Django</span>
+                                <span class="stack-badge">GraphQL</span>
+                                <span class="stack-badge">Socket.IO</span>
+                                <span class="stack-badge">MongoDB</span>
+                                <span class="stack-badge">PostgreSQL</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <p class="text-[10px] uppercase tracking-wider text-gray-400 mb-2 font-bold">AI, Cloud & Robotics</p>
+                            <div class="flex flex-wrap gap-1.5">
                                 <span class="stack-badge bg-yellow-50 dark:bg-yellow-900/20 text-yellow-600 dark:text-yellow-400">Python</span>
+                                <span class="stack-badge bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400">Dart</span>
+                                <span class="stack-badge">AWS EC2</span>
                                 <span class="stack-badge">Arduino</span>
                                 <span class="stack-badge">EV3</span>
                                 <span class="stack-badge">Spike Prime</span>
@@ -277,6 +311,111 @@
                         </div>
                     </div>
                  </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Bento Grid -->
+    <section id="experience" class="py-24 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="mb-8">
+                <span class="text-xs font-bold tracking-wider text-indigo-600 dark:text-indigo-400 uppercase mb-2 block">Toolkit</span>
+                <h2 class="text-3xl font-bold dark:text-white">Skills & Tech Stack</h2>
+            </div>
+
+            <div class="bento-grid grid-cols-1 md:grid-cols-3 auto-rows-[auto]">
+
+                <!-- Core Stack Highlight (Wide) -->
+                <div class="bento-card p-8 md:col-span-2 flex flex-col justify-between relative overflow-hidden group">
+                    <div class="absolute inset-0 bg-gradient-to-br from-indigo-50/60 to-transparent dark:from-indigo-900/10 dark:to-transparent z-0"></div>
+                    <div class="relative z-10">
+                        <span class="px-2 py-1 rounded-md bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-400 text-[10px] font-bold uppercase border border-indigo-200 dark:border-indigo-700">Core Stack</span>
+                        <h3 class="text-2xl font-bold mt-4 mb-3 dark:text-white">Full-Stack Engineering</h3>
+                        <p class="text-gray-500 dark:text-gray-400 leading-relaxed max-w-md">
+                            From pixel-perfect React interfaces to AI-driven FastAPI services — I build across the whole stack, shipping production apps solo and leading teams that do the same.
+                        </p>
+                    </div>
+                    <div class="relative z-10 flex flex-wrap gap-3 mt-8">
+                        <div class="w-12 h-12 bg-white dark:bg-gray-800 rounded-xl shadow border border-gray-100 dark:border-gray-700 flex items-center justify-center group-hover:-translate-y-1 transition-transform duration-300" style="transition-delay: 0ms;">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="w-6 h-6" alt="React">
+                        </div>
+                        <div class="w-12 h-12 bg-white dark:bg-gray-800 rounded-xl shadow border border-gray-100 dark:border-gray-700 flex items-center justify-center group-hover:-translate-y-1 transition-transform duration-300" style="transition-delay: 50ms;">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" class="w-6 h-6 dark:invert" alt="Next.js">
+                        </div>
+                        <div class="w-12 h-12 bg-white dark:bg-gray-800 rounded-xl shadow border border-gray-100 dark:border-gray-700 flex items-center justify-center group-hover:-translate-y-1 transition-transform duration-300" style="transition-delay: 100ms;">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" class="w-6 h-6" alt="Node.js">
+                        </div>
+                        <div class="w-12 h-12 bg-white dark:bg-gray-800 rounded-xl shadow border border-gray-100 dark:border-gray-700 flex items-center justify-center group-hover:-translate-y-1 transition-transform duration-300" style="transition-delay: 150ms;">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" class="w-6 h-6" alt="Tailwind CSS">
+                        </div>
+                        <div class="w-12 h-12 bg-white dark:bg-gray-800 rounded-xl shadow border border-gray-100 dark:border-gray-700 flex items-center justify-center group-hover:-translate-y-1 transition-transform duration-300" style="transition-delay: 200ms;">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="w-6 h-6" alt="Python">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Frontend Card (Tall) -->
+                <div class="bento-card p-6 md:row-span-2 flex flex-col hover:bg-gray-50 dark:hover:bg-gray-900/50 transition-colors relative overflow-hidden">
+                    <div class="absolute top-4 right-4 text-gray-300 dark:text-gray-700">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-6 dark:text-white">Frontend</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-9 h-9 shrink-0 bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700 flex items-center justify-center"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="w-5 h-5" alt="React"></div>
+                            <span class="text-sm font-semibold text-gray-700 dark:text-gray-300">React</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-9 h-9 shrink-0 bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700 flex items-center justify-center"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" class="w-5 h-5 dark:invert" alt="Next.js"></div>
+                            <span class="text-sm font-semibold text-gray-700 dark:text-gray-300">Next.js</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-9 h-9 shrink-0 bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700 flex items-center justify-center"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg" class="w-5 h-5" alt="Vite"></div>
+                            <span class="text-sm font-semibold text-gray-700 dark:text-gray-300">Vite</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-9 h-9 shrink-0 bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700 flex items-center justify-center"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" class="w-5 h-5" alt="TypeScript"></div>
+                            <span class="text-sm font-semibold text-gray-700 dark:text-gray-300">TypeScript</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-9 h-9 shrink-0 bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700 flex items-center justify-center"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" class="w-5 h-5" alt="Tailwind"></div>
+                            <span class="text-sm font-semibold text-gray-700 dark:text-gray-300">Tailwind CSS</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-9 h-9 shrink-0 bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700 flex items-center justify-center text-base">🎞️</div>
+                            <span class="text-sm font-semibold text-gray-700 dark:text-gray-300">Framer Motion</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Backend & Data Card -->
+                <div class="bento-card p-6 flex flex-col hover:bg-gray-50 dark:hover:bg-gray-900/50 transition-colors relative">
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Backend & Data</h3>
+                    <div class="grid grid-cols-4 gap-2">
+                        <div class="w-10 h-10 bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700 flex items-center justify-center" title="Node.js"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" class="w-5 h-5" alt="Node.js"></div>
+                        <div class="w-10 h-10 bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700 flex items-center justify-center" title="NestJS"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-original.svg" class="w-5 h-5" alt="Nest.js"></div>
+                        <div class="w-10 h-10 bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700 flex items-center justify-center" title="Django"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" class="w-5 h-5" alt="Django"></div>
+                        <div class="w-10 h-10 bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700 flex items-center justify-center" title="GraphQL"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg" class="w-5 h-5" alt="GraphQL"></div>
+                        <div class="w-10 h-10 bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700 flex items-center justify-center" title="Socket.IO"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/socketio/socketio-original.svg" class="w-5 h-5 dark:invert" alt="Socket.IO"></div>
+                        <div class="w-10 h-10 bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700 flex items-center justify-center" title="MongoDB"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" class="w-5 h-5" alt="MongoDB"></div>
+                        <div class="w-10 h-10 bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700 flex items-center justify-center" title="PostgreSQL"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" class="w-5 h-5" alt="PostgreSQL"></div>
+                        <div class="w-10 h-10 bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700 flex items-center justify-center text-[10px] font-bold text-gray-500" title="Express.js">EXP</div>
+                    </div>
+                </div>
+
+                <!-- AI, Cloud & Robotics Card -->
+                <div class="bento-card p-6 flex flex-col hover:bg-gray-50 dark:hover:bg-gray-900/50 transition-colors relative">
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">AI, Cloud & Robotics</h3>
+                    <div class="grid grid-cols-4 gap-2">
+                        <div class="w-10 h-10 bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700 flex items-center justify-center" title="Python"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="w-5 h-5" alt="Python"></div>
+                        <div class="w-10 h-10 bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700 flex items-center justify-center" title="Dart"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" class="w-5 h-5" alt="Dart"></div>
+                        <div class="w-10 h-10 bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700 flex items-center justify-center" title="AWS EC2"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" class="w-6 h-6 dark:invert" alt="AWS"></div>
+                        <div class="w-10 h-10 bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700 flex items-center justify-center" title="Arduino"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" class="w-5 h-5" alt="Arduino"></div>
+                        <div class="w-10 h-10 bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700 flex items-center justify-center text-[9px] font-bold text-gray-500" title="EV3">EV3</div>
+                        <div class="w-10 h-10 bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700 flex items-center justify-center text-[9px] font-bold text-gray-500" title="Spike Prime">SPIKE</div>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -310,7 +449,7 @@
 
                  <!-- RoboFest -->
                  <div class="bento-card p-6 group hover:bg-gray-50 dark:hover:bg-gray-900/50 transition-colors relative overflow-hidden">
-                     <img src="imgs/r1.png" alt="Robot" class="absolute -right-4 -bottom-4 w-34 h-auto object-contain opacity-10 dark:opacity-20 group-hover:opacity-20 dark:group-hover:opacity-30 transition-opacity duration-500 rotate-12 pointer-events-none">
+                     <img src="imgs/r1.png" alt="Robot" class="absolute -right-4 -bottom-4 w-32 h-auto object-contain opacity-10 dark:opacity-20 group-hover:opacity-20 dark:group-hover:opacity-30 transition-opacity duration-500 rotate-12 pointer-events-none">
                      <div class="relative z-10">
                          <h3 class="text-lg font-bold dark:text-white mb-2">RoboFest Winner</h3>
                          <p class="text-xs text-gray-500 mb-4">Coach of National Champions 2024</p>
@@ -352,18 +491,117 @@
             <div class="flex justify-between items-end mb-8">
                  <div>
                     <span class="text-xs font-bold tracking-wider text-purple-600 dark:text-purple-400 uppercase mb-2 block">Development</span>
-                    <h2 class="text-2xl font-bold dark:text-white">Software Projects</h2>
+                    <h2 class="text-3xl font-bold dark:text-white">Software Projects</h2>
                 </div>
                 <a href="https://github.com/3assem0" class="text-sm text-gray-500 hover:text-black dark:hover:text-white transition-colors">View all on GitHub -></a>
             </div>
 
-            <div class="bento-grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-rows-[350px]">
-                
-                  <!-- Project 1 -->
+            <div class="bento-grid grid-cols-1 sm:grid-cols-2 gap-5">
+
+                  <!-- Project: WebCraft -->
                   <div class="bento-card group relative overflow-hidden flex flex-col">
-                      <div class="h-1/2 overflow-hidden relative">
-                          <div class="absolute inset-0 bg-black/5 dark:bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
-                          <img src="imgs/pro1.png" alt="Online Games" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                      <div class="relative w-full h-56 overflow-hidden bg-white dark:bg-[#0d1117]">
+                          <img src="imgs/webcraft.png" alt="WebCraft" class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                      </div>
+                      <div class="p-6 flex-1 flex flex-col justify-between">
+                          <div>
+                             <div class="flex justify-between items-start mb-2">
+                                 <h3 class="text-lg font-bold dark:text-white">WebCraft</h3>
+                                 <a href="https://web-craft-f.vercel.app/" target="_blank" class="text-gray-400 hover:text-black dark:hover:text-white shrink-0 ml-2">↗</a>
+                             </div>
+                             <p class="text-sm text-gray-500 line-clamp-2 min-h-[2.5rem]">AI-powered SaaS website builder — build real sites with visual, Scratch-style blocks. Research paper accepted at ICMISI 2026.</p>
+                          </div>
+                          <div class="flex gap-3 text-xs font-mono text-gray-400 mt-4 flex-wrap items-center">
+                              <span class="text-green-600 dark:text-green-400 font-bold">📄 ICMISI 2026</span>
+                              <span>NEXT.JS</span>
+                              <span>AI/FASTAPI</span>
+                          </div>
+                      </div>
+                  </div>
+
+                  <!-- Project: Noon Sprachdienst -->
+                  <div class="bento-card group relative overflow-hidden flex flex-col">
+                      <div class="relative w-full h-56 overflow-hidden bg-white dark:bg-[#0d1117]">
+                          <img src="imgs/noon.png" alt="Noon Sprachdienst" class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                      </div>
+                      <div class="p-6 flex-1 flex flex-col justify-between">
+                          <div>
+                             <div class="flex justify-between items-start mb-2">
+                                 <h3 class="text-lg font-bold dark:text-white">Noon Sprachdienst</h3>
+                                 <a href="https://www.noon-sprachdienst.de/" target="_blank" class="text-gray-400 hover:text-black dark:hover:text-white shrink-0 ml-2">↗</a>
+                             </div>
+                             <p class="text-sm text-gray-500 line-clamp-2 min-h-[2.5rem]">Production website for a translation agency, supporting 7 languages with full RTL/LTR handling.</p>
+                          </div>
+                          <div class="flex gap-4 text-xs font-mono text-gray-400 mt-4">
+                              <span>REACT/VITE</span>
+                              <span>I18N</span>
+                              <span>RTL</span>
+                          </div>
+                      </div>
+                  </div>
+
+                  <!-- Project: MyDresser -->
+                  <div class="bento-card group relative overflow-hidden flex flex-col">
+                      <div class="relative w-full h-56 overflow-hidden bg-white dark:bg-[#0d1117]">
+                          <img src="imgs/mydresser.png" alt="MyDresser" class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                      </div>
+                      <div class="p-6 flex-1 flex flex-col justify-between">
+                          <div>
+                             <h3 class="text-lg font-bold dark:text-white mb-2">MyDresser</h3>
+                             <p class="text-sm text-gray-500 line-clamp-2 min-h-[2.5rem]">AI-powered fashion app for avatar generation and virtual clothes try-on.</p>
+                          </div>
+                          <div class="flex gap-4 text-xs font-mono text-gray-400 mt-4">
+                              <span>DJANGO</span>
+                              <span>DART</span>
+                              <span>AI</span>
+                          </div>
+                      </div>
+                  </div>
+
+                  <!-- Project: IEEE PUA CS/AI -->
+                  <div class="bento-card group relative overflow-hidden flex flex-col">
+                      <div class="relative w-full h-56 overflow-hidden bg-white dark:bg-[#0d1117]">
+                          <img src="imgs/ieee-pua.png" alt="IEEE PUA CS/AI" class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                      </div>
+                      <div class="p-6 flex-1 flex flex-col justify-between">
+                          <div>
+                             <div class="flex justify-between items-start mb-2">
+                                 <h3 class="text-lg font-bold dark:text-white">IEEE PUA CS/AI</h3>
+                                 <a href="https://ieee-pua-cs-ai.vercel.app/" target="_blank" class="text-gray-400 hover:text-black dark:hover:text-white shrink-0 ml-2">↗</a>
+                             </div>
+                             <p class="text-sm text-gray-500 line-clamp-2 min-h-[2.5rem]">Official web presence for the IEEE PUA RAS branch, built and maintained as Web Master.</p>
+                          </div>
+                          <div class="flex gap-4 text-xs font-mono text-gray-400 mt-4">
+                              <span>NEXT.JS</span>
+                              <span>REACT</span>
+                          </div>
+                      </div>
+                  </div>
+
+                  <!-- Project: Rehabilitation Center -->
+                  <div class="bento-card group relative overflow-hidden flex flex-col">
+                      <div class="relative w-full h-56 overflow-hidden bg-white dark:bg-[#0d1117]">
+                          <img src="imgs/rehab-center.png" alt="Rehabilitation Center" class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                      </div>
+                      <div class="p-6 flex-1 flex flex-col justify-between">
+                          <div>
+                             <div class="flex justify-between items-start mb-2">
+                                 <h3 class="text-lg font-bold dark:text-white">Rehabilitation Center</h3>
+                                 <a href="https://rehabilitation-center-for-special-n.vercel.app/" target="_blank" class="text-gray-400 hover:text-black dark:hover:text-white shrink-0 ml-2">↗</a>
+                             </div>
+                             <p class="text-sm text-gray-500 line-clamp-2 min-h-[2.5rem]">Web platform for a special-needs rehabilitation center, built to make services accessible online.</p>
+                          </div>
+                          <div class="flex gap-4 text-xs font-mono text-gray-400 mt-4">
+                              <span>REACT</span>
+                              <span>ACCESSIBILITY</span>
+                          </div>
+                      </div>
+                  </div>
+
+                  <!-- Project 1 (square) -->
+                  <div class="bento-card group relative overflow-hidden flex flex-col">
+                      <div class="relative w-full h-56 overflow-hidden bg-white dark:bg-[#0d1117]">
+                          <img src="imgs/pro1.png" alt="Online Games" class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
                       </div>
                       <div class="p-6 flex-1 flex flex-col justify-between">
                           <div>
@@ -371,7 +609,7 @@
                                  <h3 class="text-lg font-bold dark:text-white">Online Games</h3>
                                  <a href="https://3assem0.github.io/Online-Games-webpage/" class="text-gray-400 hover:text-black dark:hover:text-white">↗</a>
                              </div>
-                             <p class="text-sm text-gray-500 line-clamp-2">Browser-based gaming platform with optimized performance.</p>
+                             <p class="text-sm text-gray-500 line-clamp-2 min-h-[2.5rem]">Browser-based gaming platform with optimized performance.</p>
                           </div>
                           <div class="flex gap-4 text-xs font-mono text-gray-400 mt-4">
                               <span>HTML/CSS</span>
@@ -380,12 +618,11 @@
                           </div>
                       </div>
                   </div>
- 
-                  <!-- Project 2 -->
+
+                  <!-- Project 2 (square) -->
                   <div class="bento-card group relative overflow-hidden flex flex-col">
-                      <div class="h-1/2 overflow-hidden relative">
-                          <div class="absolute inset-0 bg-black/5 dark:bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
-                          <img src="imgs/pro2.png" alt="BookMarker" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                      <div class="relative w-full h-56 overflow-hidden bg-white dark:bg-[#0d1117]">
+                          <img src="imgs/pro2.png" alt="BookMarker" class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
                       </div>
                       <div class="p-6 flex-1 flex flex-col justify-between">
                           <div>
@@ -393,7 +630,7 @@
                                  <h3 class="text-lg font-bold dark:text-white">Book Marker</h3>
                                  <a href="https://3assem0.github.io/BookMarker/" class="text-gray-400 hover:text-black dark:hover:text-white">↗</a>
                              </div>
-                             <p class="text-sm text-gray-500 line-clamp-2">Smart utility for organizing web resources.</p>
+                             <p class="text-sm text-gray-500 line-clamp-2 min-h-[2.5rem]">Smart utility for organizing web resources.</p>
                           </div>
                           <div class="flex gap-4 text-xs font-mono text-gray-400 mt-4">
                               <span>TOOL</span>
@@ -401,12 +638,11 @@
                           </div>
                       </div>
                   </div>
- 
-                  <!-- Project 3 -->
+
+                  <!-- Project 3 (square) -->
                   <div class="bento-card group relative overflow-hidden flex flex-col">
-                      <div class="h-1/2 overflow-hidden relative">
-                          <div class="absolute inset-0 bg-black/5 dark:bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
-                          <img src="imgs/pro9.png" alt="Real Estate" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                      <div class="relative w-full h-56 overflow-hidden bg-white dark:bg-[#0d1117]">
+                          <img src="imgs/pro9.png" alt="Real Estate" class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
                       </div>
                       <div class="p-6 flex-1 flex flex-col justify-between">
                           <div>
@@ -414,7 +650,7 @@
                                  <h3 class="text-lg font-bold dark:text-white">Real Estate</h3>
                                  <a href="https://sweet-home-sigma.vercel.app/" class="text-gray-400 hover:text-black dark:hover:text-white">↗</a>
                              </div>
-                             <p class="text-sm text-gray-500 line-clamp-2">Modern property marketplace UI.</p>
+                             <p class="text-sm text-gray-500 line-clamp-2 min-h-[2.5rem]">Modern property marketplace UI.</p>
                           </div>
                           <div class="flex gap-4 text-xs font-mono text-gray-400 mt-4">
                               <span>NEXT.JS</span>
@@ -423,11 +659,10 @@
                       </div>
                   </div>
 
-                 <!-- Project 4 -->
+                 <!-- Project 4 (square) -->
                   <div class="bento-card group relative overflow-hidden flex flex-col">
-                     <div class="h-1/2 overflow-hidden relative">
-                         <div class="absolute inset-0 bg-black/5 dark:bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
-                         <img src="imgs/pro6.png" alt="E-Commerce" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                     <div class="relative w-full h-56 overflow-hidden bg-white dark:bg-[#0d1117]">
+                         <img src="imgs/pro6.png" alt="E-Commerce" class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
                      </div>
                      <div class="p-6 flex-1 flex flex-col justify-between">
                          <div>
@@ -435,7 +670,7 @@
                                 <h3 class="text-lg font-bold dark:text-white">E-Commerce</h3>
                                 <a href="https://3assem0.github.io/e-commerce/" class="text-gray-400 hover:text-black dark:hover:text-white">↗</a>
                             </div>
-                            <p class="text-sm text-gray-500 line-clamp-2">Full shopping experience mockup.</p>
+                            <p class="text-sm text-gray-500 line-clamp-2 min-h-[2.5rem]">Full shopping experience mockup.</p>
                          </div>
                          <div class="flex gap-4 text-xs font-mono text-gray-400 mt-4">
                              <span>JS</span>
@@ -444,11 +679,10 @@
                      </div>
                  </div>
 
-                  <!-- Project 5 -->
+                  <!-- Project 5 (square) -->
                   <div class="bento-card group relative overflow-hidden flex flex-col">
-                     <div class="h-1/2 overflow-hidden relative">
-                         <div class="absolute inset-0 bg-black/5 dark:bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
-                         <img src="imgs/Spiro.png" alt="Spiro" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                     <div class="relative w-full h-56 overflow-hidden bg-white dark:bg-[#0d1117]">
+                         <img src="imgs/Spiro.png" alt="Spiro" class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
                      </div>
                      <div class="p-6 flex-1 flex flex-col justify-between">
                          <div>
@@ -456,7 +690,7 @@
                                 <h3 class="text-lg font-bold dark:text-white">Spiro Spates</h3>
                                 <a href="https://3assem0.github.io/spiro-spates/" class="text-gray-400 hover:text-black dark:hover:text-white">↗</a>
                             </div>
-                            <p class="text-sm text-gray-500 line-clamp-2">Product landing page with high conversion design.</p>
+                            <p class="text-sm text-gray-500 line-clamp-2 min-h-[2.5rem]">Product landing page with high conversion design.</p>
                          </div>
                          <div class="flex gap-4 text-xs font-mono text-gray-400 mt-4">
                              <span>LANDING</span>
@@ -465,11 +699,10 @@
                      </div>
                  </div>
 
-                  <!-- Project 6 -->
+                  <!-- Project 6 (square) -->
                   <div class="bento-card group relative overflow-hidden flex flex-col">
-                     <div class="h-1/2 overflow-hidden relative">
-                         <div class="absolute inset-0 bg-black/5 dark:bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
-                         <img src="imgs/pro7.png" alt="Weather" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                     <div class="relative w-full h-56 overflow-hidden bg-white dark:bg-[#0d1117]">
+                         <img src="imgs/pro7.png" alt="Weather" class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
                      </div>
                      <div class="p-6 flex-1 flex flex-col justify-between">
                          <div>
@@ -477,7 +710,7 @@
                                 <h3 class="text-lg font-bold dark:text-white">Weather App</h3>
                                 <a href="https://3assem0.github.io/Weather-smart-app/" class="text-gray-400 hover:text-black dark:hover:text-white">↗</a>
                             </div>
-                             <p class="text-sm text-gray-500 line-clamp-2">Real-time weather tracking via API.</p>
+                             <p class="text-sm text-gray-500 line-clamp-2 min-h-[2.5rem]">Real-time weather tracking via API.</p>
                           </div>
                           <div class="flex gap-4 text-xs font-mono text-gray-400 mt-4">
                               <span>API</span>
@@ -486,7 +719,6 @@
                       </div>
                   </div>
 
-               
             </div>
         </div>
     </section>
@@ -499,29 +731,29 @@
                 <h2 class="text-3xl font-bold dark:text-white">Organizations & Volunteering</h2>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                <!-- Dream Team -->
+                <!-- IEEE PUA RAS -->
                 <div class="p-6 bg-white dark:bg-gray-900/50 rounded-2xl border border-gray-100 dark:border-gray-800 hover:shadow-lg transition-shadow">
-                    <h3 class="font-bold text-lg dark:text-white">Dream Team</h3>
-                    <p class="text-xs text-blue-500 font-bold uppercase mt-1">Head of Web Track & PR</p>
-                    <p class="text-sm text-gray-500 mt-2">Leading technical tracks and boosting social engagement by 40%.</p>
+                    <h3 class="font-bold text-lg dark:text-white">IEEE PUA RAS Branch</h3>
+                    <p class="text-xs text-indigo-500 font-bold uppercase mt-1">Web Master • 2026 - Present</p>
+                    <p class="text-sm text-gray-500 mt-2">Managing and developing the branch's web presence and digital infrastructure.</p>
                 </div>
                  <!-- Hult Prize -->
                 <div class="p-6 bg-white dark:bg-gray-900/50 rounded-2xl border border-gray-100 dark:border-gray-800 hover:shadow-lg transition-shadow">
                     <h3 class="font-bold text-lg dark:text-white">Hult Prize PUA</h3>
-                    <p class="text-xs text-pink-500 font-bold uppercase mt-1">Head of Academic Web</p>
-                    <p class="text-sm text-gray-500 mt-2">Managing academic web development tracks and workshops.</p>
+                    <p class="text-xs text-pink-500 font-bold uppercase mt-1">Head of Academic Web Track • 2025 - Present</p>
+                    <p class="text-sm text-gray-500 mt-2">Leading the technical education track focused on web development for participants.</p>
                 </div>
-                 <!-- IEEE -->
+                 <!-- Dream Team Tech -->
                 <div class="p-6 bg-white dark:bg-gray-900/50 rounded-2xl border border-gray-100 dark:border-gray-800 hover:shadow-lg transition-shadow">
-                    <h3 class="font-bold text-lg dark:text-white">IEEE PUA</h3>
-                    <p class="text-xs text-indigo-500 font-bold uppercase mt-1">Head of Academic Web</p>
-                    <p class="text-sm text-gray-500 mt-2">Overseeing technical curriculum and student development.</p>
+                    <h3 class="font-bold text-lg dark:text-white">Dream Team (Tech)</h3>
+                    <p class="text-xs text-blue-500 font-bold uppercase mt-1">Head of Frontend & Backend Tracks • 2025</p>
+                    <p class="text-sm text-gray-500 mt-2">Mentored fellow students in real-world full-stack development skills and best practices.</p>
                 </div>
-                <!-- Pharos University -->
+                <!-- Dream Team PR -->
                 <div class="p-6 bg-white dark:bg-gray-900/50 rounded-2xl border border-gray-100 dark:border-gray-800 hover:shadow-lg transition-shadow">
-                    <h3 class="font-bold text-lg dark:text-white">Pharos University</h3>
-                    <p class="text-xs text-purple-500 font-bold uppercase mt-1">Graduation Organizer</p>
-                    <p class="text-sm text-gray-500 mt-2">Coordinated logistics for 500+ attendees ensuring seamless execution.</p>
+                    <h3 class="font-bold text-lg dark:text-white">Dream Team (PR)</h3>
+                    <p class="text-xs text-purple-500 font-bold uppercase mt-1">PR Team Member • 2025</p>
+                    <p class="text-sm text-gray-500 mt-2">Contributed to a 40% increase in social media engagement through strategic campaigns.</p>
                 </div>
             </div>
         </div>
