@@ -136,6 +136,18 @@ a.case-media:hover img, a.card-media:hover img { transform: scale(1.03); }
 .pipeline li { display: flex; align-items: center; gap: 14px; padding: 12px 14px; border-radius: 12px; background: rgba(246, 234, 214, .07); border: 1px solid rgba(246, 234, 214, .1); font-size: .95rem; }
 .pipeline li span { font: 600 .8rem "JetBrains Mono", monospace; color: var(--on-accent); background: var(--mustard); border-radius: 7px; padding: 3px 7px; }
 
+.arch { padding: 28px; background: var(--espresso); color: #f6ead6; border-color: transparent; display: grid; gap: 8px; }
+.arch-row { display: grid; justify-items: center; }
+.arch-row.three { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.arch-box { width: 100%; text-align: center; padding: 12px 10px; border-radius: 12px; background: rgba(246, 234, 214, .07); border: 1px solid rgba(246, 234, 214, .12); font-weight: 600; font-size: .95rem; }
+.arch-box small { display: block; font-weight: 400; font-size: .78rem; color: rgba(246, 234, 214, .65); margin-top: 3px; }
+.arch-box.main { background: var(--mustard); color: var(--on-accent); border-color: transparent; }
+.arch-box.main small { color: rgba(35, 21, 15, .75); }
+.arch-box.ext { border-style: dashed; color: var(--mustard); }
+.arch-arrow { text-align: center; font: 500 .78rem "JetBrains Mono", monospace; color: var(--mustard); }
+.arch-foot { text-align: center; color: rgba(246, 234, 214, .6); margin-top: 6px; }
+@media (max-width: 760px) { .arch { padding: 18px; } .arch-box { font-size: .82rem; padding: 10px 6px; } }
+
 .duo { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-bottom: 72px; }
 .card-project { padding: 18px 18px 24px; border-radius: 22px; background: var(--surface); border: 1px solid var(--line); box-shadow: var(--shadow); }
 .card-media { display: block; border-radius: 14px; overflow: hidden; margin-bottom: 18px; border: 1px solid var(--line); }

@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=2">
+<link rel="stylesheet" href="style.css?v=3">
 <script>
   try { var t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
 </script>
@@ -121,9 +121,25 @@
   </article>
 
   <article class="case flip">
-    <a class="case-media" href="https://mydressr.com" target="_blank" rel="noopener">
-      <img src="imgs/mydresser.webp" alt="MyDressr AI fashion app landing page" loading="lazy" width="1400" height="655">
-    </a>
+    <div class="case-media arch" role="img" aria-label="Diagram of the MyDressr back end: Flutter app, Django REST API, PostgreSQL, Celery and Redis workers, and Gemini, Stripe and Firebase services">
+      <div class="pipe-title mono">Backend architecture</div>
+      <div class="arch-row"><div class="arch-box">Flutter mobile app</div></div>
+      <div class="arch-arrow" aria-hidden="true">↓ REST · token auth</div>
+      <div class="arch-row"><div class="arch-box main">Django REST API<small>100+ endpoints · Google / Apple sign-in · OTP</small></div></div>
+      <div class="arch-arrow" aria-hidden="true">↓</div>
+      <div class="arch-row three">
+        <div class="arch-box">PostgreSQL<small>wardrobe, outfits, trips</small></div>
+        <div class="arch-box">Celery + Redis<small>async try-on, AI jobs</small></div>
+        <div class="arch-box">AWS S3<small>images &amp; avatars</small></div>
+      </div>
+      <div class="arch-arrow" aria-hidden="true">↓</div>
+      <div class="arch-row three">
+        <div class="arch-box ext">Gemini AI</div>
+        <div class="arch-box ext">Stripe</div>
+        <div class="arch-box ext">Firebase FCM</div>
+      </div>
+      <div class="arch-foot mono">Docker · GitHub Actions CI/CD</div>
+    </div>
     <div class="case-body">
       <p class="case-meta mono">RaySoftware · Saudi Arabia · 2026</p>
       <h3>MyDressr: AI fashion app</h3>
@@ -135,9 +151,7 @@
         <li>Celery + Redis in Docker, Postgres-matched environments, GitHub Actions CI/CD</li>
         <li>Gemini features: avatar generation, clothing recognition, stylist chat, async try-on</li>
       </ul>
-      <p class="tags"><span>Django REST</span><span>PostgreSQL</span><span>Celery</span><span>Docker</span><span>Gemini</span><span>Stripe</span></p>
-      <a class="link" href="https://mydressr.com" target="_blank" rel="noopener">mydressr.com ↗</a>
-    </div>
+      <p class="tags"><span>Django REST</span><span>PostgreSQL</span><span>Celery</span><span>Docker</span><span>Gemini</span><span>Stripe</span></p>    </div>
   </article>
 
   <article class="case">
