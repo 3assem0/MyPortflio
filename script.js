@@ -1,57 +1,42 @@
-function toggleMenu() {
-  const menu = document.querySelector("#mobile-menu");
-  const icon = document.querySelector(".hamburger-icon");
-  menu.classList.toggle("hidden");
-  // icon.classList.toggle("open"); // If we were using the old icon style
+// Theme toggle: remembers the choice when storage is available.
+const root = document.documentElement;
+const themeBtn = document.getElementById('themeBtn');
+function currentTheme() {
+  if (root.dataset.theme) return root.dataset.theme;
+  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+}
+themeBtn.addEventListener('click', () => {
+  const next = currentTheme() === 'dark' ? 'light' : 'dark';
+  root.dataset.theme = next;
+  try { localStorage.setItem('theme', next); } catch (e) {}
+});
+
+// Mobile menu
+const menuBtn = document.getElementById('menuBtn');
+const navLinks = document.getElementById('navLinks');
+menuBtn.addEventListener('click', () => {
+  const open = navLinks.classList.toggle('open');
+  menuBtn.setAttribute('aria-expanded', String(open));
+});
+navLinks.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => {
+  navLinks.classList.remove('open');
+  menuBtn.setAttribute('aria-expanded', 'false');
+}));
+
+// Nav background after scrolling
+const nav = document.querySelector('.nav');
+const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 10);
+onScroll();
+window.addEventListener('scroll', onScroll, { passive: true });
+window.addEventListener('load', onScroll);
+
+// Reveal on scroll
+const targets = document.querySelectorAll('.case, .card-project, .mini, .timeline li, .skill-card, .paper, .awards div, .section-head');
+if ('IntersectionObserver' in window) {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  targets.forEach((el) => { el.classList.add('reveal'); io.observe(el); });
 }
 
-// Dark Mode Logic
-const themeToggleBtn = document.getElementById('theme-toggle');
-const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
-const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
-const mobileThemeToggleBtn = document.getElementById('theme-toggle-mobile');
-
-// Check for saved user preference, if any, on load of the website
-if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-    document.documentElement.classList.add('dark');
-    themeToggleLightIcon.classList.remove('hidden');
-    if(mobileThemeToggleBtn) mobileThemeToggleBtn.innerHTML = '☀️';
-} else {
-    document.documentElement.classList.remove('dark');
-    themeToggleDarkIcon.classList.remove('hidden');
-    if(mobileThemeToggleBtn) mobileThemeToggleBtn.innerHTML = '🌙';
-}
-
-function toggleTheme() {
-    // Toggle icons inside button
-    themeToggleDarkIcon.classList.toggle('hidden');
-    themeToggleLightIcon.classList.toggle('hidden');
-
-    // if set via local storage previously
-    if (localStorage.getItem('color-theme')) {
-        if (localStorage.getItem('color-theme') === 'light') {
-            document.documentElement.classList.add('dark');
-            localStorage.setItem('color-theme', 'dark');
-            if(mobileThemeToggleBtn) mobileThemeToggleBtn.innerHTML = '☀️';
-        } else {
-            document.documentElement.classList.remove('dark');
-            localStorage.setItem('color-theme', 'light');
-            if(mobileThemeToggleBtn) mobileThemeToggleBtn.innerHTML = '🌙';
-        }
-
-    // if NOT set via local storage previously
-    } else {
-        if (document.documentElement.classList.contains('dark')) {
-            document.documentElement.classList.remove('dark');
-            localStorage.setItem('color-theme', 'light');
-            if(mobileThemeToggleBtn) mobileThemeToggleBtn.innerHTML = '🌙';
-        } else {
-            document.documentElement.classList.add('dark');
-            localStorage.setItem('color-theme', 'dark');
-            if(mobileThemeToggleBtn) mobileThemeToggleBtn.innerHTML = '☀️';
-        }
-    }
-}
-
-themeToggleBtn.addEventListener('click', toggleTheme);
-if(mobileThemeToggleBtn) mobileThemeToggleBtn.addEventListener('click', toggleTheme);
+document.getElementById('year').textContent = new Date().getFullYear();
